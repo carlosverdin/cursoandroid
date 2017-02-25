@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:id="@+id/editText"
+            android:id="@+id/usernameEditText"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginStart="16dp"
@@ -72,7 +72,7 @@
             android:inputType="textPassword"
             android:text="Escribe tu nombre de usuario"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/passwordEditText"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginStart="16dp"
@@ -93,7 +93,7 @@
             android:text="LOGIN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/button"/>
+            android:id="@+id/loginButton"/>
     </LinearLayout>
 
 </LinearLayout>
