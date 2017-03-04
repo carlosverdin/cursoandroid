@@ -10,6 +10,7 @@
         android:layout_weight="1"
         android:src="@drawable/udg"
         android:id="@+id/image"
+        android:adjustViewBounds="true"
         android:scaleType="fitCenter"/>
 
     <LinearLayout
