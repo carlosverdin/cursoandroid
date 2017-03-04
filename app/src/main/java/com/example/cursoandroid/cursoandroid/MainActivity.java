@@ -2,6 +2,7 @@ package com.example.cursoandroid.cursoandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         CarAdapter adapter = new CarAdapter(this, carros);
         RecyclerView lista = (RecyclerView) findViewById(R.id.listaDatos);
-        lista.setLayoutManager(new LinearLayoutManager(this));
+        lista.setLayoutManager(new GridLayoutManager(this,2));
         lista.setHasFixedSize(true);
         lista.setAdapter(adapter);
 
