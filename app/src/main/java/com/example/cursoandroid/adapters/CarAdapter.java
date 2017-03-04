@@ -19,16 +19,14 @@ import java.util.ArrayList;
  * Created by alumno on 04/03/2017.
  */
 
-public class CarAdapter extends RecyclerView.Adapter<Carro> {
+public class CarAdapter extends RecyclerView.Adapter<CarAdapter.viewHolder> {
 
     private ArrayList<Carro> data;
     private Context context;
 
     public CarAdapter(Context context,ArrayList<Carro> carros){
-        super(context, R.layout.item_list,carros);
         this.context=context;
         this.data=carros;
-
     }
 
     /*
@@ -36,6 +34,8 @@ public class CarAdapter extends RecyclerView.Adapter<Carro> {
         super(context, resource);
     }*/
 
+
+    /*
     @Override
     public int getCount() {
         return data.size();
@@ -60,6 +60,27 @@ public class CarAdapter extends RecyclerView.Adapter<Carro> {
         image.setImageResource(carro.getId_image());
 
         return viewItem;
+    }*/
+
+    @Override
+    public viewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view=LayoutInflater.from(context).inflate(R.layout.item_list,parent,false);
+        viewHolder holder=new viewHolder(view);
+        view.setTag(holder);
+        return holder;
+    }
+
+    @Override
+    public void onBindViewHolder(viewHolder holder, int position) {
+        Carro carro=data.get(position);
+        holder.title.setText(carro.getTitle());
+        holder.description.setText(carro.getDescription());
+        holder.image.setImageResource(carro.getId_image());
+    }
+
+    @Override
+    public int getItemCount() {
+        return data.size();
     }
 
     static class viewHolder extends RecyclerView.ViewHolder{

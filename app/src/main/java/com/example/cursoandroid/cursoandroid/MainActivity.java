@@ -2,6 +2,8 @@ package com.example.cursoandroid.cursoandroid;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         carros.add(new Carro(R.drawable.carros5, "Z500", "380 KM/H"));
 
         CarAdapter adapter = new CarAdapter(this, carros);
-        ListView lista = (ListView) findViewById(R.id.listaDatos);
+        RecyclerView lista = (RecyclerView) findViewById(R.id.listaDatos);
+        lista.setLayoutManager(new LinearLayoutManager(this));
+        lista.setHasFixedSize(true);
         lista.setAdapter(adapter);
 
 
