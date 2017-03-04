@@ -3,20 +3,31 @@ package com.example.cursoandroid.cursoandroid;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText username;
     private EditText password;
+    private String[] data=new String[]{
+            "Elemento1","Elemento2","Elemento3"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        username=(EditText)findViewById(R.id.usernameEditText);
+
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,data);
+        ListView lista=(ListView)findViewById(R.id.listaDatos);
+        lista.setAdapter(adapter);
+
+
+        /*username=(EditText)findViewById(R.id.usernameEditText);
         password=(EditText)findViewById(R.id.passwordEditText);
 
         Button login=(Button)findViewById(R.id.loginButton);
@@ -28,10 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
             }
-            });
+            });*/
 
     }
 
+    /*
     private boolean checkCredentianls(){
         boolean rightCredentials=true;
         username.setError(null);
@@ -76,6 +88,6 @@ public class MainActivity extends AppCompatActivity {
         return passValidation;
 
     }
-
+   */
 
 }
